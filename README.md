@@ -23,10 +23,15 @@ mvvm+rac响应式编程架构
    
      请求对象的基类，如果你的业务请求不需要分页操作，必须继承此类并且子类必须覆盖以下方法
      
+      * - (Class)modelClass;  业务模型类，根据接口数据设计的业务模型类，子类需重写此方法返回model.class
+     
    * RKBasePageRequest
    
-   
       请求对象的基类，如果你的业务请求需要分页操作，必须继承此类并且子类必须覆盖以下方法
+      
+      * - (NSString *)keyForArray;  接口中指向数组的key
+      
+      * - (Class)modelInArray;  数组中的模型类
       
    ### loading加载框、HUD信息提示
    * UIView+Loading
