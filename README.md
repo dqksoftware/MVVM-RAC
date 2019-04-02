@@ -23,7 +23,7 @@ mvvm+rac响应式编程架构
    
      请求对象的基类，如果你的业务请求不需要分页操作，必须继承此类并且子类必须覆盖以下方法
      
-      * - (Class)modelClass;  业务模型类，根据接口数据设计的业务模型类，子类需重写此方法返回model.class
+      - (Class)modelClass;  业务模型类，根据接口数据设计的业务模型类，子类需重写此方法返回model.class
      
    * RKBasePageRequest
    
