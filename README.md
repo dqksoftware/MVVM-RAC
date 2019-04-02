@@ -21,7 +21,7 @@ mvvm+rac响应式编程架构
    * RKBaseRequest
    
      请求对象的基类，如果你的业务请求不需要分页操作，必须继承此请求并且子类必须覆盖以下方法，用法：
-     ` // 登录
+     `// 登录
         @interface RKLoginRequest : RKBaseRequest
 
         @property(nonatomic, copy)NSString *phone;  // 手机号码
@@ -29,6 +29,7 @@ mvvm+rac响应式编程架构
         @property(nonatomic, copy)NSString *code;  // 验证码
 
         @end`
+     
         
      
        
