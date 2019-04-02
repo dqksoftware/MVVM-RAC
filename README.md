@@ -31,7 +31,7 @@ mvvm+rac响应式编程架构
         @property(nonatomic, copy)NSString *code;  // 验证码
 
         @end
-`
+     `
      
        
 
