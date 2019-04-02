@@ -22,7 +22,6 @@
 - (void)createView
 {
     self.textF.placeholder = @"请输入验证码";
-    self.lineV.backgroundColor = kMainColor;
     [self.logoImgV mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@0);
     }];

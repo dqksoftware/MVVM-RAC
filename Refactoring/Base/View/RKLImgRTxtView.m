@@ -46,6 +46,15 @@
         make.height.equalTo(@30);
         make.right.equalTo(self);
     }];
+    
+    [[self.textF rac_signalForSelector:@selector(becomeFirstResponder)] subscribeNext:^(RACTuple * _Nullable x) {
+        self.lineV.backgroundColor = kMainColor;
+    }];
+    
+    [[self.textF rac_signalForSelector:@selector(resignFirstResponder)] subscribeNext:^(RACTuple * _Nullable x) {
+        
+        self.lineV.backgroundColor = self.textF.text.length > 0 ? kMainColor : [UIColor grayColor];
+    }];
 }
 
 
@@ -71,6 +80,7 @@
 {
     if (!_lineV) {
         _lineV = [[UIView alloc] init];
+        _lineV.backgroundColor = [UIColor grayColor];
         [self addSubview:_lineV];
     }
     return _lineV;

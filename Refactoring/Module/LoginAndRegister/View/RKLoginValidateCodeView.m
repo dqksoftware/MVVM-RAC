@@ -23,7 +23,6 @@
 - (void)createView
 {
     self.textF.placeholder = @"请输入短信验证码";
-    self.lineV.backgroundColor = kMainColor;
 }
 
 @end

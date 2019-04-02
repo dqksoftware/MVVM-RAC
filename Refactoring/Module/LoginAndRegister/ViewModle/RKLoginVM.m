@@ -29,7 +29,7 @@
         @strongify(self)
         self.loginRequest.phone = phoneNum;
         self.loginRequest.code = validateCode;
-        return @(phoneNum.length && validateCode.length && [phoneNum length]);
+        return @(phoneNum.validateMobile && validateCode.length && [phoneNum length]);
     }];
     
     // 验证码按钮是否可用

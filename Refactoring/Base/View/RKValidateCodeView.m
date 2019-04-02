@@ -57,6 +57,15 @@
         make.height.equalTo(@30);
         make.right.equalTo(self.sendCodeBtn.mas_left).offset(-10);
     }];
+    
+    [[self.textF rac_signalForSelector:@selector(becomeFirstResponder)] subscribeNext:^(RACTuple * _Nullable x) {
+        self.lineV.backgroundColor = kMainColor;
+    }];
+    
+    [[self.textF rac_signalForSelector:@selector(resignFirstResponder)] subscribeNext:^(RACTuple * _Nullable x) {
+        
+        self.lineV.backgroundColor = self.textF.text.length > 0 ? kMainColor : [UIColor grayColor];
+    }];
 }
 
 - (void)setup
@@ -90,7 +99,6 @@
     [self.signal subscribeNext:^(id  _Nullable x) {
         @strongify(self)
         self.totalSeconds--;
-        NSLog(@"++++++++++  %zd", self.totalSeconds);
         NSArray* info = self.totalSeconds == 0 ? @[@"重新发送", @(RKValidateCodeButtonStateReSend)] : @[kFormat(@"%.2zd s", self.totalSeconds), @(RKValidateCodeButtonStateSent)];
         [self.sendCodeBtn code_setTitle:info[0] forState:[info[1] integerValue]];
     }];
@@ -130,6 +138,7 @@
 {
     if (!_lineV) {
         _lineV = [[UIView alloc] init];
+        _lineV.backgroundColor = [UIColor grayColor];
         [self addSubview:_lineV];
     }
     return _lineV;

@@ -52,6 +52,10 @@
         [self.registerVM.registerCmd execute:@"注册"];
     }];
     
+    [RACObserve(self.registerView.registerBtn, enabled) subscribeNext:^(id  _Nullable x) {
+        [self.registerView.registerBtn setBackgroundColor: [x boolValue] ? kMainColor : [UIColor grayColor]];
+    }];
+    
     // 注册结果
     [self.registerVM.registerCmd.executionSignals.switchToLatest subscribeNext:^(RKBaseRequest *request) {
         /***

@@ -49,29 +49,30 @@
     RAC(self.loginView.codeV.sendCodeBtn, enabled) = self.loginVM.validateCodeBtnEnableSignal;
     RAC(self, loginData) = RACObserve(self.loginVM, loginData);
 
+
     @weakify(self)
     [[self.loginView.loginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
         [self.loginVM.command execute:@"点击登录"];
         
     }];
-    
+    // 登录
     [self.loginVM.command.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
         if (self.successBlock) {
             self.successBlock();
         }
     }];
-    
-    // 发送验证码
-    self.loginView.codeV.sendCodeNext = ^(RACSignal * _Nonnull signal) {
-        
-    };
     
     // 点击注册
     [[self.loginView.registerBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
         RKRegisterController *registerVC = [[RKRegisterController alloc] init];
         [self.navigationController pushViewController:registerVC animated:YES];
+    }];
+    
+    [RACObserve(self.loginView.loginBtn, enabled) subscribeNext:^(id  _Nullable x) {
+        [self.loginView.loginBtn setBackgroundColor: [x boolValue] ? kMainColor : [UIColor grayColor]];
     }];
 }
 

@@ -22,13 +22,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setup];
+        [self createView];
     }
     return self;
 }
 
-// 初始化
-- (void)setup
+// 初始化视图
+- (void)createView
 {
     [self.logoImgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
@@ -62,6 +62,7 @@
         make.width.equalTo(@100);
     }];
 }
+
 
 - (UIImageView *)logoImgV
 {

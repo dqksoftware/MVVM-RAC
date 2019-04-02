@@ -25,7 +25,6 @@
 {
     self.textF.keyboardType = UIKeyboardTypeNumberPad;
     self.textF.placeholder = @"请输入手机号";
-    self.lineV.backgroundColor = kMainColor;
 }
 
 

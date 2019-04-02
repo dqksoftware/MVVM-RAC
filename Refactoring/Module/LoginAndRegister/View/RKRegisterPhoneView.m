@@ -22,7 +22,6 @@
 - (void)createView
 {
     self.textF.placeholder = @"请输入11位手机号";
-    self.lineV.backgroundColor = kMainColor;
     self.textF.keyboardType = UIKeyboardTypeNumberPad;
     [self.logoImgV mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@0);
