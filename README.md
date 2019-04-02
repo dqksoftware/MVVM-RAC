@@ -29,9 +29,9 @@ mvvm+rac响应式编程架构
    
       请求对象的基类，如果你的业务请求需要分页操作，必须继承此类并且子类必须覆盖以下方法
       
-      * - (NSString *)keyForArray;  接口中指向数组的key
+       - (NSString *)keyForArray;  接口中指向数组的key
       
-      * - (Class)modelInArray;  数组中的模型类
+       - (Class)modelInArray;  数组中的模型类
       
    ### loading加载框、HUD信息提示
    * UIView+Loading
