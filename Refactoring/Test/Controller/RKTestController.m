@@ -26,12 +26,6 @@ static NSString *cellIdentifer = @"cellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (!kLoginManager.login) {
-        [kLoginManager goLoginComplete:^{
-            // 登录完成后做的一些事情
-        } animation:YES];
-    }
-    
     [self setup];
     [self requestBlock];
     [self createView];

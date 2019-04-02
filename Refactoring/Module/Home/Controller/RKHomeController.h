@@ -6,11 +6,11 @@
 //  Copyright © 2019 rongshu. All rights reserved.
 //
 
-#import "RKBaseController.h"
+#import "RKBaseTableController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RKHomeController : RKBaseController
+@interface RKHomeController : RKBaseTableController
 
 @end
 

@@ -29,7 +29,7 @@
 {
     NSMutableArray *controllers = [NSMutableArray array];
     NSArray *tabbarDatas = @[
-                             @[@"icon_nomarl", @"icon_select", @"首页", [RKTestController class]],
+                             @[@"icon_nomarl", @"icon_select", @"首页", [RKHomeController class]],
                              @[@"icon_nomarl", @"icon_select", @"我的", [RKMineController class]]
                             ];
     for (int i = 0; i < tabbarDatas.count; i++) {
