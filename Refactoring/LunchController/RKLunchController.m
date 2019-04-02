@@ -7,7 +7,6 @@
 //
 
 #import "RKLunchController.h"
-#import "RKLoginController.h"
 #import "RKBaseTabBarController.h"
 
 @interface RKLunchController ()

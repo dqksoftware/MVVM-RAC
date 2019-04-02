@@ -13,14 +13,14 @@
 
 /***************   debug 模式      *******************/
 
-#define kHost @"http://47.111.96.113/"    // 域名
+#define kHost @"https://daifaadmin.wsy.com/"    // 域名
 
 
 #else
 
 /***************   release 模式      *******************/
 
-#define kHost @"http://47.111.96.113/"    // 域名
+#define kHost @"https://daifaadmin.wsy.com/"    // 域名
 
 
 #endif

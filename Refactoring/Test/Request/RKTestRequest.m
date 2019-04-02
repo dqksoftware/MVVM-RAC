@@ -26,7 +26,7 @@
 
 - (NSString *)requestUrl
 {
-    return @"https://daifaadmin.wsy.com/api-buyer/app-home-api/search";
+    return @"api-buyer/app-home-api/search";
 }
 
 @end

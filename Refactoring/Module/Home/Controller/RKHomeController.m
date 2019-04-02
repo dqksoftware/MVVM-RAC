@@ -8,6 +8,7 @@
 
 #import "RKHomeController.h"
 #import "RKTestController.h"
+#import "RKMoreDisorderlyRequestController.h"
 
 @interface RKHomeController ()
 
@@ -32,7 +33,7 @@
 #pragma mark --- NetWorkRequest
 - (void)setup
 {
-    self.dataSouce = @[@"分页请求"];
+    self.dataSouce = @[@"分页请求", @"多个无依赖请求"];
 }
 
 // 创建视图
@@ -76,7 +77,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController pushViewController:[RKTestController new] animated:YES];
+    if (indexPath.row == 0) {
+        [self.navigationController pushViewController:[RKTestController new] animated:YES];
+    }
+    
+    if (indexPath.row == 1) {
+        [self.navigationController pushViewController:[RKMoreDisorderlyRequestController new] animated:YES];
+    }
+    
 }
 
 
